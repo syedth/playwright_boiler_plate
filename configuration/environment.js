@@ -39,11 +39,13 @@ function generateEnvironment() {
 
 	fs.writeFile(__dirname + '/environment.json', JSON.stringify(obj, null, 2), function () {
 		console.log('Environment config generated Successfully');
+		console.log(`==========================================================================\n`);
 	});
 }
 
 // Generate Environments
 generateEnvironment();
-console.log(`==========================================================================\n`);c
-console.log(`Environment Generated\n`);
-console.log(`==========================================================================\n`);
+
+module.exports = {
+	generateEnvironment: generateEnvironment
+  };
